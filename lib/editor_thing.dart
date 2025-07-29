@@ -19,7 +19,7 @@ class _EditorThingState extends State<EditorThing> {
     _editor = DocumentEditor(document: _document);
   }
 
-  // Create a simple initial document with a paragraph
+// le paragraph
   MutableDocument _createInitialDocument() {
     return MutableDocument(nodes: [
       ParagraphNode(

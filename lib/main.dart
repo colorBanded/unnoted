@@ -97,29 +97,28 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: const Icon(Icons.account_circle),
               title: const Text('Profile'),
               onTap: () {
-                // TODO: Handle the tap for Profile
-                Navigator.pop(context); // Close the drawer
+
+                Navigator.pop(context); 
               },
             ),
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Settings'),
               onTap: () {
-                // TODO: Handle the tap for Settings
-                Navigator.pop(context); // Close the drawer
+
+                Navigator.pop(context); 
               },
             ),
-            // Use Expanded to push the Logout button to the bottom
             const Expanded(
-              child: SizedBox(), // An empty SizedBox takes up the available space
+              child: SizedBox(),
             ),
             ListTile(
               leading: const Icon(Icons.logout),
-              title: const Text('Logout'),
+              title: const Text('Exit'),
               onTap: () {
                 // TODO: Handle the tap for Logout
-                Navigator.pop(context); // Close the drawer
-                // Add your logout logic here
+                Navigator.pop(context);
+
               },
             ),
           ],
