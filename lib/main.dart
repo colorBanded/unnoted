@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'editor_thing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,10 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       'Index 0: Home',
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     ),
-    Text(
-      'Index 1: Business',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-    ),
+    EditorThing(),
     Text(
       'Index 2: School',
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),

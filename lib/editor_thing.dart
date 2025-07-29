@@ -10,15 +10,13 @@ class EditorThing extends StatefulWidget {
 
 class _EditorThingState extends State<EditorThing> {
   late MutableDocument _document;
-  late MutableDocumentComposer _composer;
-  late Editor _editor;
+  late DocumentEditor _editor;
 
   @override
   void initState() {
     super.initState();
-    _document = _createInitialDocument(); // Create an initial empty document
-    _composer = MutableDocumentComposer();
-    _editor = createDefaultDocumentEditor(document: _document, composer: _composer);
+    _document = _createInitialDocument();
+    _editor = DocumentEditor(document: _document);
   }
 
   // Create a simple initial document with a paragraph
@@ -33,8 +31,6 @@ class _EditorThingState extends State<EditorThing> {
 
   @override
   void dispose() {
-    _editor.dispose();
-    _composer.dispose();
     _document.dispose();
     super.dispose();
   }
@@ -44,14 +40,10 @@ class _EditorThingState extends State<EditorThing> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Rich Text Editor'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: SuperEditor(
+      body: SuperEditor.standard(
         editor: _editor,
-        composer: _composer,
-        // Add a basic toolbar
-        toolbarBuilder: (editor, composer) {
-          return DefaultEditorToolbar(editor: editor, composer: composer);
-        },
       ),
     );
   }
