@@ -24,7 +24,7 @@ class _EditorThingState extends State<EditorThing> {
     return MutableDocument(nodes: [
       ParagraphNode(
         id: DocumentEditor.createNodeId(),
-        text: AttributedText(text: ''),
+        text: AttributedText(''),
       ),
     ]);
   }
@@ -42,7 +42,7 @@ class _EditorThingState extends State<EditorThing> {
         title: const Text('Rich Text Editor'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: SuperEditor.standard(
+      body: SuperEditor(
         editor: _editor,
       ),
     );
